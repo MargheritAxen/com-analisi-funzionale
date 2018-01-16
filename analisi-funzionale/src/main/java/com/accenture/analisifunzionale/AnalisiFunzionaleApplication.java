@@ -110,10 +110,12 @@ public class AnalisiFunzionaleApplication {
 
 				try (XSSFWorkbook workbook1 = new XSSFWorkbook()) {
 					int offset = 0;
+					int offset1 = 0;
+					int offset2 = 0;
 					for (Mapper item : mappers) {
 						offset += item.toXslx1(workbook1, offset);
-//						offset += item.toXsls2(workbook1, offset);
-//						offset += item.toXsls3(workbook1, offset);
+						offset1 += item.toXsls2(workbook1, offset1);
+						offset2 += item.toXsls3(workbook1, offset2);
 
 					}
 					File outputFile = new FileHelper().createFileOnBuildPath(args[0]);

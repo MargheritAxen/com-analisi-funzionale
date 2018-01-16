@@ -309,14 +309,9 @@ public class Mapper {
 		}
 
 		writtenLines += serializzaMappingEspliciti(HEADER_ROW_OFFSET + writtenLines + offset, sheet);
-		for (int columnIndex = 0; columnIndex < 10; columnIndex++) {
-			sheet.autoSizeColumn(columnIndex);
-		}
+
 		if (this.hasByDefault) {
 			writtenLines += serializzaMappingImpliciti(HEADER_ROW_OFFSET + writtenLines + offset, sheet);
-			for (int columnIndex = 0; columnIndex < 10; columnIndex++) {
-				sheet.autoSizeColumn(columnIndex);
-			}
 		}
 		return writtenLines;
 	}
@@ -350,12 +345,9 @@ public class Mapper {
 			this.makeHeaderWithOffset(HEADER_ROW_OFFSET, missingEntityToModelMaps);
 			++numeroRighe;
 		}
-		for (int columnIndex = 0; columnIndex < 10; columnIndex++) {
-			missingEntityToModelMaps.autoSizeColumn(columnIndex);
-		}
-		
+
 		for (Mapping map : mappingMancantiTo) {
-			Row mappingRow = missingEntityToModelMaps.createRow(offset+numeroRighe++);
+			Row mappingRow = missingEntityToModelMaps.createRow(offset + numeroRighe++);
 			// Se ha custom lo colori di giallo, altrimenti rosso
 			Color cellColor = this.hasCustom ? Color.YELLOW : Color.RED;
 			XSSFCellStyle backGroundColourCellStyle = makeColouredBGStyle(mappingRow, cellColor);
@@ -376,10 +368,6 @@ public class Mapper {
 			this.makeHeaderWithOffset(HEADER_ROW_OFFSET, missingModelToEntityMaps);
 			++numeroRighe;
 		}
-		for (int columnIndex = 0; columnIndex <= 10; columnIndex++) {
-			missingModelToEntityMaps.autoSizeColumn(columnIndex);
-		}
-		
 		for (Mapping map : mappingMancantiFrom) {
 			Row mappingRow = missingModelToEntityMaps.createRow(offset + numeroRighe++);
 			// Se ha custom lo colori di giallo, altrimenti rosso
