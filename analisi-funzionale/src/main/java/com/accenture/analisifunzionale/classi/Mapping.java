@@ -140,7 +140,7 @@ public class Mapping {
 			XSSFCellStyle backGroundColourCellStyle) {
 		int localOffset = mappingStartOffset;
 
-		addColouredCellAtOffset(localOffset, mappingRow, this.getClasseFrom(), backGroundColourCellStyle);
+		addColouredCellAtOffset(localOffset++, mappingRow, this.getClasseFrom(), backGroundColourCellStyle);
 		addColouredCellAtOffset(localOffset++, mappingRow, this.getClasseTo(), backGroundColourCellStyle);
 
 		addColouredCellAtOffset(localOffset++, mappingRow,
@@ -153,7 +153,7 @@ public class Mapping {
 		addColouredCellAtOffset(localOffset++, mappingRow,
 				this.associazioneCampi.getCampoTo() == null ? null : this.associazioneCampi.getCampoTo().getNome(),
 				backGroundColourCellStyle);
-		addColouredCellAtOffset(localOffset++, mappingRow,
+		addColouredCellAtOffset(localOffset, mappingRow,
 				this.associazioneCampi.getCampoTo() == null ? null : this.associazioneCampi.getCampoTo().getTipo(),
 				backGroundColourCellStyle);
 		
