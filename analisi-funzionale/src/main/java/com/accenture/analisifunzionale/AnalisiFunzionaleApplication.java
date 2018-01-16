@@ -118,7 +118,7 @@ public class AnalisiFunzionaleApplication {
 						offset2 += item.toXsls3(workbook1, offset2);
 
 					}
-					File outputFile = new FileHelper().createFileOnBuildPath(args[0]);
+					File outputFile = new FileHelper().createFile(args[0]);
 					try (FileOutputStream outStream = new FileOutputStream(outputFile)) {
 						workbook1.write(outStream);
 					}

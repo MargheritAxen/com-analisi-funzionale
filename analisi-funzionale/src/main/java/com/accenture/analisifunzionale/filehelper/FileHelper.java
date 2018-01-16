@@ -18,9 +18,8 @@ public class FileHelper {
 		File parent = new File(new URI(url.toString()));
 		return new File(parent, fileName);
 	}
-	
-	public File createFile(String fileName) throws URISyntaxException {
-		File parent = new File(fileName);
-		return new File(parent, fileName);
+
+	public File createFile(String fileName) {
+		return new File(fileName);
 	}
 }
